@@ -96,7 +96,7 @@ public abstract class Divinite {
 
 
 
-	public enum Dogme {
+/*	public enum Dogme {
 		Nature("Nature", false), Humain("Humain", false), Symboles("Symboles", false), Mystique("Mystique",
 				false), Chaos("Chaos", false);
 
@@ -108,7 +108,7 @@ public abstract class Divinite {
 			this.possede = possede;
 		}
 
-	};
+	};*/
 
 
 	public abstract void capacite();

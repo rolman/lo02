@@ -6,6 +6,9 @@ import Divinite.Divinite;
 import jeu.Carte;
 
 public class Participants {
+	
+	private LinkedList<jeu.GuideSpirituel> fideles;
+	
 	public Divinite getType() {
 		return null;
 		
@@ -59,5 +62,17 @@ public class Participants {
 	public LinkedList<Carte> getMain(){
 		return null;
 		
+	}
+	
+	public int puissancePriere(){
+		int puissance=0;
+		
+		for(int i=0;i<this.fideles.size();i++){
+			for(int j=0;i<this.fideles.get(i).getCroyants().size();j++){
+				puissance++;
+			}
+		}
+		
+		return puissance;
 	}
 }

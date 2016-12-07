@@ -9,9 +9,13 @@ import java.util.Scanner;
 import Divinite.Divinite;
 import Divinite.DiviniteBrewalen;
 import Divinite.DiviniteDrinded;
+import Divinite.DiviniteGorpa;
+import Divinite.DiviniteGwenghelen;
 import Divinite.DiviniteKillinstred;
 import Divinite.DiviniteLlewella;
 import Divinite.DivinitePuiTara;
+import Divinite.DiviniteRomtec;
+import Divinite.DiviniteShingva;
 import Divinite.DiviniteYarstur;
 import Joueur.Joueur;
 import Joueur.JoueurVirtuel;
@@ -22,6 +26,14 @@ public class Partie {
 	private static byte nbJoueurs; // De 2 a 7
 	//private ArrayList<Divinite> divinites;
 	private static ArrayList<Participants> joueurs;
+	public static ArrayList<Participants> getJoueurs() {
+		return joueurs;
+	}
+
+	public static void setJoueurs(ArrayList<Participants> joueurs) {
+		Partie.joueurs = joueurs;
+	}
+
 	private static LinkedList<Divinite> tasDivinite;
 	private static boolean partieCommence = false;
 
@@ -82,6 +94,8 @@ public class Partie {
 	
 	
 	public void infoPartie(){
+		System.out.println();
+		
 		for (int i = 0; i < joueurs.size(); i++) {
 			System.out.println("-----------------------------------");
 			System.out.println("Info " + joueurs.get(i).getNom() + " :");
@@ -177,12 +191,20 @@ public class Partie {
 		DiviniteKillinstred diviniteKillinstred = new DiviniteKillinstred();
 		DiviniteLlewella diviniteLlewella = new DiviniteLlewella();
 		DivinitePuiTara divinitePuiTara = new DivinitePuiTara();
+		DiviniteGwenghelen diviniteGwenghelen = new DiviniteGwenghelen();
+		DiviniteRomtec diviniteRomtec = new DiviniteRomtec();
+		DiviniteShingva diviniteShingva = new DiviniteShingva();
+		DiviniteGorpa diviniteGorpa = new DiviniteGorpa();
 		tasDivinite.add(diviniteYarstur);
 		tasDivinite.add(diviniteBrewalen);
 		tasDivinite.add(diviniteDrinded);
 		tasDivinite.add(diviniteKillinstred);
 		tasDivinite.add(diviniteLlewella);
 		tasDivinite.add(divinitePuiTara);
+		tasDivinite.add(diviniteGwenghelen);
+		tasDivinite.add(diviniteRomtec);
+		tasDivinite.add(diviniteShingva);
+		tasDivinite.add(diviniteGorpa);
 
 		for (int i = 0; i < tasDivinite.size(); i++) {
 			int position = (int) Math.round((tasDivinite.size() - 1) * Math.random());
@@ -205,7 +227,7 @@ public class Partie {
 		if (partieCommence == false) {
 			Pioche.getInstance();
 			Pioche.getInstance().melanger();
-			//Pioche.getInstance().voirPioche();
+			Pioche.getInstance().voirPioche();
 
 			for (int i = 0; i < nbJoueursReelsChoisis; i++) {
 
@@ -232,13 +254,13 @@ public class Partie {
 	 * qu'un joueur dans la partie.
 	 * 
 	 * @author Yvann et Mehdi
+	 * @param participants 
 	 * @param void
-	 * @return Le gagnant de la partie.
 	 */
-	public String afficherGagnant() {
+	public static void afficherGagnant(Participants participant) {
 		// TODO
-		String nomGagnant = "ppp";
-		return nomGagnant;
+		System.out.println( "Le gagnant est : " + participant);
+		System.exit(0);
 	}
 
 }

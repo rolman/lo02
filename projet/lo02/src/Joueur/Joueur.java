@@ -1,13 +1,18 @@
 package Joueur;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 import jeu.Carte;
+import jeu.GuideSpirituel;
 
 import java.util.Scanner;
 
 import Divinite.Divinite;
+import Plateau.Partie;
 import Plateau.Pioche;
 import Plateau.Plateau;
 
@@ -19,27 +24,20 @@ public class Joueur extends Participants {
 	private LinkedList<Carte> main;
 	private LinkedList<jeu.GuideSpirituel> fideles;
 	private Divinite type;
-	
-	private boolean peutJouer; //Pour capacité sacrifice travailleurs
-	
-	public boolean getPeutJouer()
-	{
+
+	private boolean peutJouer; // Pour capacité sacrifice travailleurs
+
+	public boolean getPeutJouer() {
 		return peutJouer;
 	}
-	
-	public void setPeutJouer(boolean b)
-	{
-		if(b==true)
-		{
-			peutJouer=true;
-		}
-		else
-		{
-			peutJouer=false;
+
+	public void setPeutJouer(boolean b) {
+		if (b == true) {
+			peutJouer = true;
+		} else {
+			peutJouer = false;
 		}
 	}
-	
-	
 
 	public LinkedList<Carte> getMain() {
 		return main;
@@ -54,7 +52,8 @@ public class Joueur extends Participants {
 		for (Iterator it = main.iterator(); it.hasNext();) {
 
 			Carte carte = (Carte) it.next();
-			System.out.println(position + "  " + carte.getNom() + "     " + java.util.Arrays.toString(carte.getDogmes()) + "      " + carte.getCosmologie());
+			System.out.println(position + "  " + carte.getNom() + "     " + java.util.Arrays.toString(carte.getDogmes())
+					+ "      " + carte.getCosmologie());
 			position++;
 		}
 
@@ -87,11 +86,13 @@ public class Joueur extends Participants {
 			this.main.add(Pioche.getInstance().tirerCarteDuDessus());
 		}
 
-	/*	for (Iterator it = main.iterator(); it.hasNext();) {
-
-			Carte carte = (Carte) it.next();
-
-		}*/
+		/*
+		 * for (Iterator it = main.iterator(); it.hasNext();) {
+		 * 
+		 * Carte carte = (Carte) it.next();
+		 * 
+		 * }
+		 */
 	}
 
 	@Override
@@ -145,7 +146,7 @@ public class Joueur extends Participants {
 	}
 
 	public int getPointActionNeant() {
-		return pointActionNuit;
+		return pointActionNeant;
 	}
 
 	public void ajoutPointActionJour(int pointActionJour) {
@@ -303,19 +304,71 @@ public class Joueur extends Participants {
 
 						action1 = true;
 					}
-					
 
-				} 
-				
-				else if ((main.get(choix1) instanceof jeu.DeuxEx)){
-					//TODO
 				}
-				
-				else if ((main.get(choix1) instanceof jeu.Apocalypse)){
-					//TODO
+
+				else if ((main.get(choix1) instanceof jeu.DeuxEx)) {
+					// TODO
 				}
-				
-				else if ((main.get(choix1) instanceof jeu.Croyant)){
+
+				else if ((main.get(choix1) instanceof jeu.Apocalypse)) {
+					System.out.println("VOus avez lancé une apocalypse !!!");
+					if (Partie.getJoueurs().size() <= 3) {
+						int idJoueurGagnant = 0;
+						boolean uneEgalite = false;
+						for (int i = 0; i < Partie.getJoueurs().size(); i++) {
+							if (i == 0) {
+								idJoueurGagnant = i;
+
+							} else {
+								if (Partie.getJoueurs().get(idJoueurGagnant).puissancePriere() < Partie.getJoueurs()
+										.get(i).puissancePriere()) {
+									idJoueurGagnant = i;
+									uneEgalite = false;
+								} else if (Partie.getJoueurs().get(idJoueurGagnant).puissancePriere() == Partie
+										.getJoueurs().get(i).puissancePriere()) {
+									uneEgalite = true;
+								}
+							}
+
+						}
+						if (uneEgalite) {
+							main.remove(choix1);
+						} else {
+							Partie.afficherGagnant(Partie.getJoueurs().get(idJoueurGagnant));
+							main.remove(choix1);
+						}
+					} else {
+						int idJoueurPerdant = 0;
+						boolean uneEgalite = false;
+						for (int i = 0; i < Partie.getJoueurs().size(); i++) {
+							if (i == 0) {
+								idJoueurPerdant = i;
+
+							} else {
+								if (Partie.getJoueurs().get(idJoueurPerdant).puissancePriere() > Partie.getJoueurs()
+										.get(i).puissancePriere()) {
+									idJoueurPerdant = i;
+									uneEgalite = false;
+								} else if (Partie.getJoueurs().get(idJoueurPerdant).puissancePriere() == Partie
+										.getJoueurs().get(i).puissancePriere()) {
+									uneEgalite = true;
+								}
+							}
+
+						}
+						if (uneEgalite) {
+							action1 = true;
+							main.remove(choix1);
+						} else {
+							action1 = true;
+							Partie.getJoueurs().remove(idJoueurPerdant);
+							main.remove(choix1);
+						}
+					}
+				}
+
+				else if ((main.get(choix1) instanceof jeu.Croyant)) {
 					String dogme = main.get(choix1).getCosmologie();
 					switch (dogme) {
 					case "Jour":
@@ -327,36 +380,37 @@ public class Joueur extends Participants {
 							System.out.println("Pas assez de points d'action ...");
 						}
 						break;
-					case "Nuit":if (this.pointActionNuit > 0) {
-						this.pointActionNuit--;
-						Plateau.getInstance().poserCarte(main.remove(choix1));
-						action1 = true;
-					} else {
-						System.out.println("Pas assez de points d'action ...");
-					}
+					case "Nuit":
+						if (this.pointActionNuit > 0) {
+							this.pointActionNuit--;
+							Plateau.getInstance().poserCarte(main.remove(choix1));
+							action1 = true;
+						} else {
+							System.out.println("Pas assez de points d'action ...");
+						}
 						break;
-					case "Néant":if (this.pointActionNuit > 2) {
-						this.pointActionNuit=this.pointActionNuit-2;
-						Plateau.getInstance().poserCarte(main.remove(choix1));
-						action1 = true;
-					} else if (this.pointActionJour > 2) {
-						this.pointActionJour=this.pointActionJour-2;
-						Plateau.getInstance().poserCarte(main.remove(choix1));
-						action1 = true;
-					}else if (this.pointActionNeant>1) {
-						this.pointActionNeant--;
-						Plateau.getInstance().poserCarte(main.remove(choix1));
-						action1 = true;
-					}else
-						{
-						System.out.println("Pas assez de points d'action ...");
-					}
+					case "Néant":
+						if (this.pointActionNuit > 2) {
+							this.pointActionNuit = this.pointActionNuit - 2;
+							Plateau.getInstance().poserCarte(main.remove(choix1));
+							action1 = true;
+						} else if (this.pointActionJour > 2) {
+							this.pointActionJour = this.pointActionJour - 2;
+							Plateau.getInstance().poserCarte(main.remove(choix1));
+							action1 = true;
+						} else if (this.pointActionNeant > 1) {
+							this.pointActionNeant--;
+							Plateau.getInstance().poserCarte(main.remove(choix1));
+							action1 = true;
+						} else {
+							System.out.println("Pas assez de points d'action ...");
+						}
 						break;
 					}
 
 				}
 
-			} else if(main.isEmpty()) {
+			} else if (main.isEmpty()) {
 				System.out.println("La main est vide");
 				action1 = false;
 			}
@@ -412,5 +466,21 @@ public class Joueur extends Participants {
 
 	public void setFideles(LinkedList<jeu.GuideSpirituel> fideles) {
 		this.fideles = fideles;
+	}
+
+	public int puissancePriere(){
+		int puissance=0;
+		if(this.fideles.size()==0){
+			puissance = 0;
+		}
+		else{
+		for(int i=0;i<this.fideles.size();i++){
+			for(int j=0;i<this.fideles.get(i).getCroyants().size();j++){
+				puissance++;
+			}
+		}
+		}
+		
+		return puissance;
 	}
 }

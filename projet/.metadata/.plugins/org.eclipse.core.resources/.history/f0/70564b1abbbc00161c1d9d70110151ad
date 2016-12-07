@@ -1,0 +1,22 @@
+package Divinite;
+
+public class DiviniteRomtec  extends Divinite {
+
+	public DiviniteRomtec(){
+		this.setNom("Romtec");
+		this.setDescription("Romtec est une Divinité individualiste, pour qui chaque être vivant doit garder son libre arbitre.");
+		this.setCosmologie("Crepuscule");
+		boolean tabDogmes []={true,true,false,false,true};//nature, humain, symbole, mystique, chaos
+		this.setDogmes(tabDogmes);
+		this.setCapacite("Peut empêcher un jour de créer un Guide Spirituel. La carte est défaussée.");
+	}
+	
+	@Override
+	public void capacite() {
+		// TODO coder la capacité
+		
+	}
+}
+
+
+ 

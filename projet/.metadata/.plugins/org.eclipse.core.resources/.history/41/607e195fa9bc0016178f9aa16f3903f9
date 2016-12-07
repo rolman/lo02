@@ -1,0 +1,21 @@
+package Divinite;
+
+public class DiviniteRomtec  extends Divinite {
+
+	public DiviniteRomtec(){
+		this.setNom("");
+		this.setDescription("");
+		this.setCosmologie("");
+		boolean tabDogmes []={true,true,false,false,true};//nature, humain, symbole, mystique, chaos
+		this.setDogmes(tabDogmes);
+		this.setCapacite("");
+	}
+	
+	@Override
+	public void capacite() {
+		// TODO coder la capacité
+		
+	}
+}
+
+

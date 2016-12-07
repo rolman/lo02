@@ -1,7 +1,5 @@
 package Divinite;
 
-import Divinite.Divinite.Dogme;
-
 public class DiviniteDrinded extends Divinite {
 	
 	

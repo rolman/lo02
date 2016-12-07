@@ -9,14 +9,11 @@
 <fullyQualifiedTypeName name="jeu.Partie"/>
 <fullyQualifiedTypeName name="jeu.Pioche"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="Plateau.Pioche"/>
-<fullyQualifiedTypeName name="Plateau.Partie"/>
 <fullyQualifiedTypeName name="Plateau.Plateau"/>
 <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
 <fullyQualifiedTypeName name="jeu.GuideSpirituelMartyr"/>
 <fullyQualifiedTypeName name="jeu.Croyant"/>
 <fullyQualifiedTypeName name="jeu.Carte"/>
-<fullyQualifiedTypeName name="jeu.GuideSpirituel"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="jeu.CroyantAlienes"/>
@@ -30,5 +27,14 @@
 <fullyQualifiedTypeName name="jeu.CapaciteEmpecherDiviniteDogmeChaosMystiqueSacrifier"/>
 <fullyQualifiedTypeName name="Joueur.Participants"/>
 <fullyQualifiedTypeName name="jeu.CapacitePiocherDeuxCartesDansUneDivinite"/>
+<fullyQualifiedTypeName name="Divinite.DiviniteGwenghelen"/>
+<fullyQualifiedTypeName name="Divinite.DiviniteRomtec"/>
+<fullyQualifiedTypeName name="Divinite.DiviniteShingva"/>
+<fullyQualifiedTypeName name="Divinite.DiviniteGorpa"/>
+<fullyQualifiedTypeName name="jeu.GuideSpirituel"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="Joueur.Joueur"/>
+<fullyQualifiedTypeName name="Plateau.Partie"/>
+<fullyQualifiedTypeName name="Plateau.Pioche"/>
 </qualifiedTypeNameHistroy>

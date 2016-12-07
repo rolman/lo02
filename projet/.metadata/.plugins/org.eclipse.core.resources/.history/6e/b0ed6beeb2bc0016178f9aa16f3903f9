@@ -1,0 +1,264 @@
+package Plateau;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Random;
+import java.util.Scanner;
+
+import Divinite.Divinite;
+import Divinite.DiviniteBrewalen;
+import Divinite.DiviniteDrinded;
+import Divinite.DiviniteGorpa;
+import Divinite.DiviniteGwenghelen;
+import Divinite.DiviniteKillinstred;
+import Divinite.DiviniteLlewella;
+import Divinite.DivinitePuiTara;
+import Divinite.DiviniteRomtec;
+import Divinite.DiviniteShingva;
+import Divinite.DiviniteYarstur;
+import Joueur.Joueur;
+import Joueur.JoueurVirtuel;
+import Joueur.Participants;
+
+public class Partie {
+
+	private static byte nbJoueurs; // De 2 a 7
+	//private ArrayList<Divinite> divinites;
+	private static ArrayList<Participants> joueurs;
+	public static ArrayList<Participants> getJoueurs() {
+		return joueurs;
+	}
+
+	public static void setJoueurs(ArrayList<Participants> joueurs) {
+		Partie.joueurs = joueurs;
+	}
+
+	private static LinkedList<Divinite> tasDivinite;
+	private static boolean partieCommence = false;
+
+	/**
+	 * <h1>main</h1> Methode qui permet de lancer le programme
+	 * 
+	 * @author Yvann et Mehdi
+	 * @param void
+	 * @return 0 lorsque la partie est quittée.
+	 * @throws SaisieMauvaiseException
+	 */
+	public static void main(String[] args) {
+
+		System.out.println("Pandocreon Divinae");
+		System.out.println("Appuyez sur entré pour commencer à jouer");
+		Scanner touche = new Scanner(System.in);
+		touche.nextLine();
+		Partie pandocreon = new Partie();
+		// System.out.println(1/0);
+		
+		
+
+		// commencerPartie(nbJoueurs);
+		/*
+		 * Participants test = joueurs.get(0);
+		 * System.out.println(test.getType().getNom()); Participants test2 =
+		 * joueurs.get(1); System.out.println(test2.getType().getNom());
+		 * Participants test3 = joueurs.get(2);
+		 * System.out.println(test3.getType().getNom()); Participants test4 =
+		 * joueurs.get(3); System.out.println(test4.getType().getNom());
+		 */
+
+		// Mettre le main ici
+
+		// ------------------
+
+	}
+
+	public Partie() {
+		
+		
+		De de = new De();
+		joueurs = new ArrayList<Participants>();
+		nbJoueurs = choisirNbJoueurs();  //Permet de choisir le nombre de joueur et leur affecte une divinité
+		//while(partieCommence){
+		infoPartie();
+		while(joueurs.size()>1){
+			for(int i = 0; i<nbJoueurs; i++){
+				de.lancerDe(joueurs);
+				joueurs.get(i).Jouer();
+				infoPartie();
+			}
+		}
+		//}
+	}
+
+	
+	
+	
+	public void infoPartie(){
+		for (int i = 0; i < joueurs.size(); i++) {
+			System.out.println("-----------------------------------");
+			System.out.println("Info " + joueurs.get(i).getNom() + " :");
+			System.out.println("-----Divinite-----");
+			System.out.println("Nom : " + joueurs.get(i).getType().getNom());
+			System.out.println("Description : " + joueurs.get(i).getType().getDescription());
+			System.out.println("Capacité : " + joueurs.get(i).getType().getCapacite());
+			System.out.println("Cosmologie : " + joueurs.get(i).getType().getCosmologie());
+			System.out.println("Dogme(s) : Pas encore fonctionnel ");
+			System.out.println();
+			System.out.println("-----Info joueur-----");
+			System.out.println("Points d'action Jour :" + joueurs.get(i).getPointActionJour());
+			System.out.println("Points d'action Nuit :" + joueurs.get(i).getPointActionNuit());
+			System.out.println("Points d'action Neant :" + joueurs.get(i).getPointActionNeant());
+			System.out.println();
+			System.out.println("-----Main joueur-----");
+			
+				joueurs.get(i).voirMain();
+			
+			System.out.println();
+			System.out.println();
+		}
+		
+	}
+	/**
+	 * <h1>choisirNbJoueurs</h1> Methode qui permet de choisir le nombre de
+	 * joueur entre 2 et 6.
+	 * 
+	 * @author Yvann et Mehdi
+	 * @param void
+	 * @return le nombre de joueur de type byte
+	 */
+	public static byte choisirNbJoueurs() {
+		int nbJoueursChoisis; // correspond au nombre de joueur qui aura été
+		int nbJoueursReelsChoisis;
+		int nbJoueursVirtuelsChoisis;
+		// choisis.
+		String validerNbJoueur; // correspond à la validation du choix du nombre
+								// de joueur o/n
+
+		do {
+			System.out.println(
+					"Pour commencer une partie, veuillez choisir le nombre de joueur virtuels et réels (de 2 à 6 au total)");
+			System.out.println("Combien de joueurs joueront ?");
+			nbJoueursChoisis = validationNb(2, 6);
+			System.out.println("Combien de joueurs réels joueront ?");
+			nbJoueursReelsChoisis = validationNb(0, nbJoueursChoisis);
+			nbJoueursVirtuelsChoisis = nbJoueursChoisis - nbJoueursReelsChoisis;
+			System.out.println("Vous jouerez avec " + nbJoueursReelsChoisis + " joueurs réels et "
+					+ nbJoueursVirtuelsChoisis + " ?");
+
+			do {
+				System.out.println("entrez [O]ui ou [N]on");
+				Scanner choix = new Scanner(System.in);
+				validerNbJoueur = choix.nextLine().toLowerCase();
+				System.out.println(validerNbJoueur);
+			} while ((!validerNbJoueur.equals("o")) && (!validerNbJoueur.equals("n")));
+		} while (!validerNbJoueur.equals("o"));
+		creationDivinite();
+		configPartie(nbJoueursReelsChoisis, nbJoueursVirtuelsChoisis);
+		System.out.println("Que la partie commence !");
+		partieCommence =true;
+		return (byte) nbJoueursChoisis;
+	}
+
+	private static byte validationNb(int nbJoueursMin, int nbJoueursMax) {
+		int nbJoueursChoisis;
+		Scanner nbJoueursEntre = new Scanner(System.in);
+
+		do {
+			System.out.println("Le nombre doit être compris entre " + nbJoueursMin + " et " + nbJoueursMax + " :");
+			nbJoueursChoisis = nbJoueursEntre.nextInt();
+		} while ((nbJoueursChoisis < nbJoueursMin) || (nbJoueursChoisis > nbJoueursMax));
+
+		return (byte) nbJoueursChoisis;
+
+	}
+
+	/**
+	 * <h1>creationDivinite</h1> Crée les divinité virtuelles du jeu.
+	 * 
+	 * @author Yvann et Mehdi
+	 * @param nbDiviniteVirtuelle
+	 * @return void
+	 */
+	public static void creationDivinite() {
+		// DiviniteVirtuelle[] listeDiviniteVirtuelle = null; //Regarder comment
+		// faire une liste de types différents pour mettre div reel en [0]
+		tasDivinite = new LinkedList<Divinite>();
+		DiviniteBrewalen diviniteBrewalen = new DiviniteBrewalen();
+		DiviniteDrinded diviniteDrinded = new DiviniteDrinded();
+		DiviniteYarstur diviniteYarstur = new DiviniteYarstur();
+		DiviniteKillinstred diviniteKillinstred = new DiviniteKillinstred();
+		DiviniteLlewella diviniteLlewella = new DiviniteLlewella();
+		DivinitePuiTara divinitePuiTara = new DivinitePuiTara();
+		DiviniteGwenghelen diviniteGwenghelen = new DiviniteGwenghelen();
+		DiviniteRomtec diviniteRomtec = new DiviniteRomtec();
+		DiviniteShingva diviniteShingva = new DiviniteShingva();
+		DiviniteGorpa diviniteGorpa = new DiviniteGorpa();
+		tasDivinite.add(diviniteYarstur);
+		tasDivinite.add(diviniteBrewalen);
+		tasDivinite.add(diviniteDrinded);
+		tasDivinite.add(diviniteKillinstred);
+		tasDivinite.add(diviniteLlewella);
+		tasDivinite.add(divinitePuiTara);
+		tasDivinite.add(diviniteGwenghelen);
+		tasDivinite.add(diviniteRomtec);
+		tasDivinite.add(diviniteShingva);
+		tasDivinite.add(diviniteGorpa);
+
+		for (int i = 0; i < tasDivinite.size(); i++) {
+			int position = (int) Math.round((tasDivinite.size() - 1) * Math.random());
+			Divinite divinite = tasDivinite.pop();
+			tasDivinite.add(position, divinite);
+		}
+
+	}
+
+	/**
+	 * <h1>commencerPartie</h1> Méthode qui commence la partie une fois que le
+	 * joueur s'est vu assigner une divinité
+	 * 
+	 * @author Yvann et Mehdi
+	 * @param void
+	 * @return void
+	 */
+	public static void configPartie(int nbJoueursReelsChoisis, int nbJoueursVirtuelsChoisis) {
+
+		if (partieCommence == false) {
+			Pioche.getInstance();
+			Pioche.getInstance().melanger();
+			//Pioche.getInstance().voirPioche();
+
+			for (int i = 0; i < nbJoueursReelsChoisis; i++) {
+
+				joueurs.add(new Joueur(tasDivinite.pop(),i+1));
+				
+				
+				
+
+			}
+
+			for (int i = 0; i < nbJoueursVirtuelsChoisis; i++) {
+
+				joueurs.add(new JoueurVirtuel(tasDivinite.pop(),i+1));
+
+			}
+			
+			
+		}
+
+	}
+
+	/**
+	 * <h1>afficherGagnant</h1> Affiche le nom du gagnant lorsqu'il n'y a plus
+	 * qu'un joueur dans la partie.
+	 * 
+	 * @author Yvann et Mehdi
+	 * @param void
+	 * @return Le gagnant de la partie.
+	 */
+	public void afficherGagnant() {
+		// TODO
+		String nomGagnant = "ppp";
+		return nomGagnant;
+	}
+
+}
