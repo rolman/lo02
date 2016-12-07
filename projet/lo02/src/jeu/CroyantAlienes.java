@@ -1,0 +1,15 @@
+package jeu;
+
+public class CroyantAlienes extends Croyant {
+	
+	public CroyantAlienes(String nom, boolean ta[],String capacite)
+	{
+		this.setNom(nom);
+		//this.setCapacite(capacite);
+		this.setDescriptionCapacite(capacite);
+		this.setCosmologie("Néant");
+		this.setDogmes(ta);
+		this.setNombreDeCroyants(2);
+	}
+
+}

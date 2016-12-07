@@ -1,0 +1,13 @@
+package Cartes;
+
+public class CroyantTravailleurs extends Croyant {
+
+	public CroyantTravailleurs(String nom, boolean ta[],String capacite)
+	{
+		this.nom=nom;
+		this.capacite=capacite;
+		this.cosmologie="Jour";
+		this.dogmes=ta;
+		this.nbCroyants=2;
+	}
+}

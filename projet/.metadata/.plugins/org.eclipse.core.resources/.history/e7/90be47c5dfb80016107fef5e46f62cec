@@ -1,0 +1,47 @@
+package jeu;
+
+public class Croyant extends Carte{
+	
+	public final static int NOMBRE_DE_CARTES_CROYANTS=37;
+	
+	protected int nbCroyants;
+	private String description="blablabla";
+	private String descriptionCapacite="blablabla";
+	
+	//@override
+	public void sacrifice(){
+		
+	}
+
+	public int getNombreDeCroyants(){
+		return nbCroyants;
+		
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDescriptionCapacite() {
+		return descriptionCapacite;
+	}
+
+	public void setDescriptionCapacite(String descriptionCapacite) {
+		this.descriptionCapacite = descriptionCapacite;
+	}
+	
+	/*public Croyant(String nom, String capacite, String cosmologie, boolean ta[], int nbCroyants)
+	{
+		this.nom=nom;
+		this.capacite=capacite;
+		this.cosmologie=cosmologie;
+		this.dogmes=ta;
+		this.nbCroyants=nbCroyants;
+	}
+	*/
+	
+}

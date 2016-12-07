@@ -1,0 +1,15 @@
+package jeu;
+
+public class Divinite {
+	private int pointAction;
+	private enum cosmologie{};
+	private boolean dogmes[];
+	private String nom;
+	private String description;
+	
+	public void capacite(){
+		
+	}
+	
+
+}

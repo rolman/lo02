@@ -1,0 +1,32 @@
+package jeu;
+
+public class Croyant extends Carte{
+	
+	public final static int NOMBRE_DE_CARTES_CROYANTS=37;
+	
+	protected int nbCroyants;
+	
+	
+	//@override
+	public void sacrifice(){
+		
+	}
+
+	public int getNombreDeCroyants(){
+		return nbCroyants;
+		
+	}
+
+	
+	
+	/*public Croyant(String nom, String capacite, String cosmologie, boolean ta[], int nbCroyants)
+	{
+		this.nom=nom;
+		this.capacite=capacite;
+		this.cosmologie=cosmologie;
+		this.dogmes=ta;
+		this.nbCroyants=nbCroyants;
+	}
+	*/
+	
+}

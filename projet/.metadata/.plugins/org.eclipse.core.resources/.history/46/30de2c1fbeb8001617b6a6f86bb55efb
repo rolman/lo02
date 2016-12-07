@@ -1,0 +1,66 @@
+package jeu;
+
+public class Carte {
+
+	public final static int NOMBRE_TOTAL_DE_CARTES = Apocalypse.NOMBRE_DE_CARTES_APOCALYPSES + Croyant.NOMBRE_DE_CARTES_CROYANTS + DeuxEx.NOMBRE_DE_CARTES_DEUX_EX + GuideSpirituel.NOMBRE_DE_CARTES_GUIDES_SPIRITUELS;
+	
+	protected String cosmologie;
+	protected String nom;
+	//protected String dogme1;
+	//protected String dogme2;
+	//protected String dogme3;
+	//protected String dogme[]=new String [3];
+	protected boolean dogmes[];
+	protected String capacite;
+	
+	/*public void sacrifice(){
+		
+	}
+	
+	public void seDefausser(){
+		
+	}
+	
+	public String getDogme1(){
+		return dogme1;
+	}
+
+	public String getDogme2(){
+		return dogme2;
+	}
+	
+	public String getDogme3(){
+		return dogme3;
+	}
+	
+	public String[] getDogme(){
+		return dogme;
+	}
+	
+	*/
+	public String getNom(){
+		return nom;
+	}
+	
+	public String getCapacite(){
+		return capacite;
+	}
+	
+	public String getCosmologie(){
+		return cosmologie;
+	}
+	
+	public boolean[] getDogmes(){
+		return dogmes;
+	}
+	
+	public int getNbDeCroyantsPouvantEtreGuides() {
+		return 0;
+	}
+	
+	public void ajoutCroyantGuide(Carte croyant) {
+		
+	}
+	
+	
+}

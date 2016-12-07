@@ -1,0 +1,11 @@
+package Plateau;
+
+public class Plateau {
+	Pioche pioche = new Pioche();
+	
+
+	public Plateau(){
+		
+	}
+
+}

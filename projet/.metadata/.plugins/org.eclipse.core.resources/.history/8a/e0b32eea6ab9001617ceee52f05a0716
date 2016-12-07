@@ -1,0 +1,15 @@
+package jeu;
+
+public class CroyantPillards extends Croyant{
+
+	
+	public CroyantPillards(String nom, boolean ta[])
+	{
+		this.nom=nom;
+		this.capacite="Récupérez les points d'Action d'une Divinité n'ayant pas encore joué durant ce tour. Les points d'Action gardent leur Origine. La Divinité perd ses points.";
+		this.cosmologie="Nuit";
+		this.dogmes=ta;
+		this.nbCroyants=4;
+		
+	}
+}

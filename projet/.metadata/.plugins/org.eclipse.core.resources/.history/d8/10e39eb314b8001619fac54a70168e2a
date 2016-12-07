@@ -1,0 +1,82 @@
+package Joueur;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+import Divinite.Divinite;
+import Plateau.Pioche;
+import jeu.Carte;
+
+public class JoueurVirtuel implements Participants {
+	private int pointAction;
+	private String nom;
+	private LinkedList<Carte> main;
+	private  Divinite type;
+	public Divinite getType() {
+		return type;
+	}
+
+	
+	public void voirMain()
+	{
+		
+		for(Iterator it = main.iterator();it.hasNext(); )
+		{
+			
+			Carte carte = (Carte) it.next();
+			System.out.println(carte.getNom());
+		}
+		
+	}
+	
+	
+	public String getNom() {
+		return nom;
+	}
+	public void setType(Divinite nouvType) {
+		this.type = nouvType;
+	}
+	
+	/*public JoueurVirtuel(Divinite divinite){
+		type = divinite;
+	}*/
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public JoueurVirtuel(Divinite nomDiv, int numeroJoueur){
+		this.type = nomDiv;
+		StringBuffer sb = new StringBuffer();
+		sb.append("Joueur Virtuel ");
+		sb.append(numeroJoueur);
+		this.nom=sb.toString();
+		for (int i = 0; i < 7; i++) {
+			this.main.add(Pioche.getInstance().tirerCarteDuDessus());
+		}
+		
+		for(Iterator it = main.iterator();it.hasNext(); )
+		{
+			
+			Carte carte = (Carte) it.next();
+			
+			
+		}
+	}
+	@Override
+	public void Jouer() {
+		System.out.println();
+		System.out.println(nom + " joue");
+		
+	}
+	public int getPointAction() {
+		return pointAction;
+	}
+	public void setPointAction(int pointAction) {
+		this.pointAction = pointAction;
+	}
+	@Override
+	public void ajoutPointAction(int pointAction) {
+		this.pointAction += pointAction;
+	}
+}

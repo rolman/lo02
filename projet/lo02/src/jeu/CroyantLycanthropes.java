@@ -1,0 +1,23 @@
+package jeu;
+
+public class CroyantLycanthropes extends Croyant{
+
+	public CroyantLycanthropes(String nom, boolean ta[])
+	{
+		/*
+		this.nom=nom;
+		this.capacite="Retirez tous les Croyants attachés à l'un des Guides Spirituels d'une autre Divinité. Les Croyants reviennent au milieu de la table, le Guide Spirituel est défaussé.";
+		this.cosmologie="Nuit";
+		this.dogmes=ta;
+		this.nbCroyants=4;
+		*/
+		
+		this.setNom(nom);
+		//this.setCapacite("Retirez tous les Croyants attachés à l'un des Guides Spirituels d'une autre Divinité. Les Croyants reviennent au milieu de la table, le Guide Spirituel est défaussé.");
+		this.setDescriptionCapacite("Retirez tous les Croyants attachés à l'un des Guides Spirituels d'une autre Divinité. Les Croyants reviennent au milieu de la table, le Guide Spirituel est défaussé.");
+		this.setCosmologie("Nuit");
+		this.setDogmes(ta);
+		this.setNombreDeCroyants(4);
+		
+	}
+}

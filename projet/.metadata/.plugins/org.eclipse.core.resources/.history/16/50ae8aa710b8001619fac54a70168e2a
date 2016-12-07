@@ -1,0 +1,20 @@
+package Plateau;
+
+public class Plateau {
+	
+
+	public Plateau(){
+		
+	}
+
+
+	public Pioche getPioche() {
+		return pioche;
+	}
+
+
+	public void setPioche(Pioche pioche) {
+		this.pioche = pioche;
+	}
+
+}

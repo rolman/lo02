@@ -1,0 +1,30 @@
+package jeu;
+
+import java.util.*;
+import Joueur.Joueur;
+import Joueur.Participants;
+
+public class CapacitePiocherDeuxCartesDansUneDivinite extends Capacite{
+	
+	public CapacitePiocherDeuxCartesDansUneDivinite()
+	{
+		
+	}
+	
+	public void sacrifice(Joueur ja, Joueur jb)//Joueur jb qui prend au joueur ja
+	{
+		LinkedList<Carte> la = new LinkedList<Carte>();
+		LinkedList<Carte> lb = new LinkedList<Carte>();
+		
+		la=ja.getMain();
+		lb=jb.getMain();
+		
+		Iterator<Carte> it = la.iterator();
+		
+		for(int ia=0;ia<2;ia++)
+		{
+			lb.add((Carte)it.next());
+		}
+	}
+
+}

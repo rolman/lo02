@@ -1,0 +1,18 @@
+package Plateau;
+
+public class Plateau {
+
+	private static Plateau INSTANCE = new Plateau();
+
+	public static Plateau getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new Plateau();
+		}
+		return INSTANCE;
+	}
+
+	private Plateau() {
+
+	}
+
+}

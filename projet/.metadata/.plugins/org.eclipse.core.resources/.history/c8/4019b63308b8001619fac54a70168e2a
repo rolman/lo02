@@ -1,0 +1,16 @@
+ackage jeu;
+
+public class Partie {
+	private byte nbJoueurs; //De 2 à 7
+	
+	public String afficherGagnant(){
+		String nomGagnant="ppp";
+		return nomGagnant;
+	}
+
+	public Divinite imposerDivinite(){
+		Divinite divinite = new Divinite();
+		
+		return divinite;
+	}
+}
