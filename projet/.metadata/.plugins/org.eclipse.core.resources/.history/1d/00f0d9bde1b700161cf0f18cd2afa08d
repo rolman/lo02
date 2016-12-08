@@ -1,0 +1,16 @@
+package Cartes;
+
+public class CroyantMoines extends Croyant{
+	
+	
+	public CroyantMoines(String nom, boolean ta[])
+	{
+		this.nom=nom;
+		this.capacite="Donne un point d'Action d'Origine Jour.";
+		this.cosmologie="Jour";
+		this.dogmes=ta;
+		this.nbCroyants=2;
+		
+	}
+
+}

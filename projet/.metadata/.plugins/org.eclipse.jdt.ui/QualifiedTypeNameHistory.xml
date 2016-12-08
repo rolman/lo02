@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lo02.JoueurVirtuel"/>
+<fullyQualifiedTypeName name="Divinite.DiviniteLlewella"/>
+<fullyQualifiedTypeName name="Divinite.DivinitePuiTara"/>
+<fullyQualifiedTypeName name="lo02.Partie"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="jeu.Partie"/>
+<fullyQualifiedTypeName name="jeu.Pioche"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="Plateau.Pioche"/>
+<fullyQualifiedTypeName name="Plateau.Plateau"/>
+<fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
+<fullyQualifiedTypeName name="jeu.GuideSpirituelMartyr"/>
+<fullyQualifiedTypeName name="jeu.Croyant"/>
+<fullyQualifiedTypeName name="jeu.Carte"/>
+<fullyQualifiedTypeName name="jeu.GuideSpirituel"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlienes"/>
+<fullyQualifiedTypeName name="jeu.CroyantRevenant"/>
+<fullyQualifiedTypeName name="jeu.CroyantRevolutionnaires"/>
+<fullyQualifiedTypeName name="jeu.GuideSpirituelClerc"/>
+<fullyQualifiedTypeName name="jeu.Divinite"/>
+<fullyQualifiedTypeName name="Divinite.Divinite"/>
+<fullyQualifiedTypeName name="jeu.CapaciteEmpecherDiviniteDogmeNatureMystiqueSacrifier"/>
+<fullyQualifiedTypeName name="jeu.CapaciteEmpecherDiviniteDogmeChaosMystiqueSacrifier"/>
+<fullyQualifiedTypeName name="Joueur.Participants"/>
+<fullyQualifiedTypeName name="Joueur.Joueur"/>
+<fullyQualifiedTypeName name="jeu.CroyantNihilistes"/>
+<fullyQualifiedTypeName name="jeu.CapacitePiocherDeuxCartesDansUneDivinite"/>
+<fullyQualifiedTypeName name="jeu.Capacite"/>
+<fullyQualifiedTypeName name="jeu.CroyantTravailleursType1"/>
+<fullyQualifiedTypeName name="jeu.CroyantTravailleursType2"/>
+<fullyQualifiedTypeName name="jeu.CroyantTravailleursType3"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlchimistesType1"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlchimistesType2"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlchimistesType3"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlienesType1"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlienesType2"/>
+<fullyQualifiedTypeName name="jeu.CroyantAlienesType3"/>
+<fullyQualifiedTypeName name="Plateau.Partie"/>
+</qualifiedTypeNameHistroy>

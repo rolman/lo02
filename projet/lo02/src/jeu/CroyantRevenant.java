@@ -1,0 +1,17 @@
+package jeu;
+
+public class CroyantRevenant extends Croyant{
+	
+	public CroyantRevenant(String nom, boolean ta[])
+	{
+		
+		this.setNom(nom);
+		//this.setCapacite("Lancez le dé de Cosmogonie. Le tour se fini normalement, mais sous cette nouvelle influence.");
+		this.setDescriptionCapacite("Lancez le dé de Cosmogonie. Le tour se fini normalement, mais sous cette nouvelle influence.");
+		this.setCosmologie("Néant");
+		this.setDogmes(ta);
+		this.setNombreDeCroyants(1);
+		
+	}
+
+}

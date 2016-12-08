@@ -1,0 +1,17 @@
+package jeu;
+
+public class CroyantNihilistes extends Croyant{
+	
+	public CroyantNihilistes(String nom, boolean ta[])
+	{
+		
+		this.setNom(nom);
+		this.setCapacite("Jusqu'à la fin du tour, plus aucune Divinité ne reçoit de points d'Action.");
+		this.setDescriptionCapacite("Jusqu'à la fin du tour, plus aucune Divinité ne reçoit de points d'Action.");
+		this.setCosmologie("Néant");
+		this.setDogmes(ta);
+		this.setNombreDeCroyants(4);
+		
+	}
+
+}

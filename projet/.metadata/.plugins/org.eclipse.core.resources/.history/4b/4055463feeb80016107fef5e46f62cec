@@ -1,0 +1,33 @@
+package Joueur;
+
+import java.util.LinkedList;
+
+import Divinite.Divinite;
+import jeu.Carte;
+
+public class Participants {
+	public Divinite getType() ;
+	//public void setType(Divinite divinite);
+
+	public void setType(Divinite type);
+	
+	public void Jouer();
+	
+	
+	
+	public String getNom();
+	
+	public int getPointActionJour();
+	public int getPointActionNuit();
+	public int getPointActionNeant();
+
+	public void ajoutPointActionJour(int pointActionJour);
+	
+	public void ajoutPointActionNuit(int pointActionNuit);
+	
+	public void ajoutPointActionNeant(int pointActionNeant);
+	
+	public void voirMain();
+	
+	public LinkedList<Carte> getMain();
+}

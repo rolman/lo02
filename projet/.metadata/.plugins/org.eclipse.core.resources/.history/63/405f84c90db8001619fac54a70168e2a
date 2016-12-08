@@ -1,0 +1,47 @@
+package jeu;
+
+import Plateau.Pioche;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//int nbguide, String dogme1, String dogme2,String dogme3, String[] dogme, String cosmologie, String capacite, String nom
+		//String tabmartyr1[]={"Nature","Humain","Aucun"};
+		//GuideSpirituel GuideMartyr1= new GuideSpirituel(2,"Nature","Humain","Aucun",tabmartyr1,"Jour","Martyr","Martyr");
+		/*
+		String nom1=GuideMartyr1.getNom();
+		String capacite1=GuideMartyr1.getCapacite();
+		String cosmologie1 = GuideMartyr1.getCosmologie();
+		String tab1[]=GuideMartyr1.getDogme();
+		String dogme11=GuideMartyr1.getDogme1();
+		String dogme12=GuideMartyr1.getDogme2();
+		String dogme13=GuideMartyr1.getDogme3();
+		int nbguide1=GuideMartyr1.getNombreDeCroyantsPouvantEtreGuides();
+		
+		System.out.println(nom1+" "+capacite1+" "+cosmologie1+" "+tab1[0]+" "+dogme11+" "+dogme12+" "+dogme13+" "+nbguide1);
+		*/
+		
+		//GuideSpirituel(int nbguide, boolean ta[], String cosmologie, String capacite, String nom)
+		boolean tabGuideMartyr1[]={true,true,false,false,false};
+		GuideSpirituel GuideMartyr1= new GuideSpirituel("Guide Spirituel Martyr1","Equivalent à la pose d'une carte Apocalypse","Jour",tabGuideMartyr1,2);
+		
+		String nom1=GuideMartyr1.getNom();
+		String capacite1=GuideMartyr1.getCapacite();
+		String cosmologie1 = GuideMartyr1.getCosmologie();
+		int nbguide1=GuideMartyr1.getNombreDeCroyantsPouvantEtreGuides();
+		boolean tabGuideMartyr1bis[]=GuideMartyr1.getDogmes();
+		
+		
+		//System.out.println(nom1+" "+capacite1+" "+cosmologie1+" "+tabGuideMartyr1bis[0]+"|"+tabGuideMartyr1bis[1]+"|"+tabGuideMartyr1bis[2]+"|"+tabGuideMartyr1bis[3]+"|"+tabGuideMartyr1bis[4]+" "+nbguide1);
+		
+		Pioche pioche1=new Pioche();
+		pioche1.voirPioche();
+		pioche1.melanger();
+		System.out.println("PIOCHE MELANGEE");
+		pioche1.voirPioche();
+		
+	}
+
+}

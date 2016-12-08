@@ -1,0 +1,60 @@
+package Joueur;
+
+import java.util.LinkedList;
+
+import Divinite.Divinite;
+import jeu.Carte;
+
+public class JoueurVirtuel implements Participants {
+	private int pointAction;
+	private String nom;
+	private LinkedList<Carte> main;
+	private  Divinite type;
+	public Divinite getType() {
+		return type;
+	}
+	public LinkedList<Carte> getMain() {
+		return main;
+	}
+	public void setMain(LinkedList<Carte> main) {
+		this.main = main;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setType(Divinite nouvType) {
+		this.type = nouvType;
+	}
+	
+	/*public JoueurVirtuel(Divinite divinite){
+		type = divinite;
+	}*/
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public JoueurVirtuel(Divinite nomDiv, int numeroJoueur){
+		this.type = nomDiv;
+		StringBuffer sb = new StringBuffer();
+		sb.append("Joueur Virtuel ");
+		sb.append(numeroJoueur);
+		this.nom=sb.toString();
+	}
+	@Override
+	public void Jouer() {
+		System.out.println();
+		System.out.println(nom + " joue");
+		
+	}
+	public int getPointAction() {
+		return pointAction;
+	}
+	public void setPointAction(int pointAction) {
+		this.pointAction = pointAction;
+	}
+	@Override
+	public void ajoutPointAction(int pointAction) {
+		this.pointAction += pointAction;
+	}
+}

@@ -1,0 +1,20 @@
+package Joueur;
+
+import Divinite.Divinite;
+
+public interface Participants {
+	public Divinite getType() ;
+	//public void setType(Divinite divinite);
+
+	public void setType(Divinite type);
+	
+	public void Jouer();
+	
+	public void ajoutPointAction(int pointAction);
+	
+	public String getNom();
+	
+	public int getPointAction();
+	
+	public void voirMain();
+}

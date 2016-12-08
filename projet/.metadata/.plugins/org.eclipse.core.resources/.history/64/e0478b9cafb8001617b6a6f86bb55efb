@@ -1,0 +1,21 @@
+package jeu;
+
+public class GuideSpirituelMartyr extends GuideSpirituel {
+
+
+	
+	public class GuideSpirituelMartyr extends GuideSpirituel {
+	    
+	    public GuideSpirituelMartyr(String nom, boolean ta[], String cosmologie)
+	    {
+	        this.nom=nom;
+	        this.capacite="Equivalent à la pose d'une carte Apocalypse";
+	        this.cosmologie=cosmologie;
+	        this.dogmes=ta;
+	        this.nbDeCroyantsPouvantEtreGuides=2;
+	        
+	    }
+
+	}
+
+}

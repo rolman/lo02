@@ -1,0 +1,17 @@
+ackage lo02;
+
+public class Carte {
+	private enum cosmologie{};
+	//private list dogme;
+	private String nom;
+	private String capacite;
+	
+	public void sacrifice(){
+		
+	}
+	
+	public void seDefausser(){
+		
+	}
+
+}

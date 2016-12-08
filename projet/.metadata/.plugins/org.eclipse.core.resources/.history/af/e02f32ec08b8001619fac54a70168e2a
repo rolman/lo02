@@ -1,0 +1,15 @@
+package Plateau;
+
+import jeu.Pioche;
+
+public class Plateau {
+	
+	public Plateau(){
+		Pioche pioche1=new Pioche();
+		pioche1.voirPioche();
+		pioche1.melanger();
+		System.out.println("PIOCHE MELANGEE");
+		pioche1.voirPioche();
+	}
+
+}

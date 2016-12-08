@@ -1,0 +1,15 @@
+package Cartes;
+
+public class CroyantGuerriersSaints extends Croyant {
+
+	public CroyantGuerriersSaints(String nom, boolean ta[])
+	{
+		this.nom=nom;
+		this.capacite="Un Guide Spirituel revient dans la main de sa Divinité. Ses Croyants reviennent sur la table.";
+		this.cosmologie="Jour";
+		this.dogmes=ta;
+		this.nbCroyants=4;
+		
+	}
+	
+}

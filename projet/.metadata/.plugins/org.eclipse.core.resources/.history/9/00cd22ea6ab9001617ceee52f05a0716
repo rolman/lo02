@@ -1,0 +1,15 @@
+package jeu;
+
+public class CroyantEsprits extends Croyant{
+	
+	public CroyantEsprits(String nom, boolean ta[])
+	{
+		this.nom=nom;
+		this.capacite="Donne un point d'Action d'Origine Néant.";
+		this.cosmologie="Néant";
+		this.dogmes=ta;
+		this.nbCroyants=2;
+		
+	}
+
+}

@@ -1,0 +1,38 @@
+package jeu;
+
+import java.util.*;
+import Joueur.Joueur;
+import Joueur.Participants;
+import Plateau.Partie;
+
+public class CapacitePiocherDeuxCartesDansUneDivinite extends Capacite{
+	
+	public CapacitePiocherDeuxCartesDansUneDivinite()
+	{
+		
+	}
+	
+	public void sacrifice(Joueur ja, Joueur jb)//Joueur jb qui prend au joueur ja
+	{
+		System.out.println("A quelle divinité voulez-vous prendre deux cartes ?");
+		
+		for(int i = 0; i<Partie.getJoueurs().size();i++)
+		{
+			System.out.println(i+" "+Partie.getJoueurs().get(i).getType().getNom());
+		}
+		
+		System.out.println("Quel est votre choix ?");
+		
+		Scanner sc = new Scanner();
+		
+		int choix = sc.nextInt(System.in);
+		
+		Iterator<Carte> it = la.iterator();
+		
+		for(int ia=0;ia<2;ia++)
+		{
+			lb.add((Carte)it.next());
+		}
+	}
+
+}

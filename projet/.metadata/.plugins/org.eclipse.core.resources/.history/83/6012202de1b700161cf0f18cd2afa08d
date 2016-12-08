@@ -1,0 +1,15 @@
+package Cartes;
+
+public class CroyantAlchimistes extends Croyant{
+
+	
+	public CroyantAlchimistes(String nom, boolean ta[], String capacite)
+	{
+		this.nom=nom;
+		this.capacite=capacite;
+		this.cosmologie="Nuit";
+		this.dogmes=ta;
+		this.nbCroyants=2;
+		
+	}
+}

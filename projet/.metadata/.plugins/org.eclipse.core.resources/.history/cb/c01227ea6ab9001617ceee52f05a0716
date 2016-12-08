@@ -1,0 +1,15 @@
+package jeu;
+
+public class CroyantIntegristes  extends Croyant{
+	
+	public CroyantIntegristes(String nom, boolean ta[])
+	{
+		this.nom=nom;
+		this.capacite="Impose le sacrifice d'un Guide Spirituel d'un autre joueur qui choisiti la carte. La capacite spéciale du sacrifice est jouée";
+		this.cosmologie="Jour";
+		this.dogmes=ta;
+		this.nbCroyants=1;
+		
+	}
+
+}
