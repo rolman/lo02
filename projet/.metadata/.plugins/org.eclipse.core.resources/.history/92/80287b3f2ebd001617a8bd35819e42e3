@@ -25,7 +25,6 @@ public class Partie {
 
 	private static byte nbJoueurs; // De 2 a 7
 	//private ArrayList<Divinite> divinites;
-	private int idJoueurJouant;
 	private static ArrayList<Participants> joueurs;
 	public static ArrayList<Participants> getJoueurs() {
 		return joueurs;
@@ -83,7 +82,6 @@ public class Partie {
 		infoPartie();
 		while(joueurs.size()>1){
 			for(int i = 0; i<nbJoueurs; i++){
-				idJoueurJouant=i;
 				de.lancerDe(joueurs);
 				joueurs.get(i).Jouer();
 				infoPartie();
@@ -92,7 +90,7 @@ public class Partie {
 		//}
 	}
 
-
+	
 	
 	
 	public void infoPartie(){
@@ -263,14 +261,6 @@ public class Partie {
 		// TODO
 		System.out.println( "Le gagnant est : " + participant);
 		System.exit(0);
-	}
-
-	public int getIdJoueurJouant() {
-		return idJoueurJouant;
-	}
-
-	public void setIdJoueurJouant(int idJoueurJouant) {
-		this.idJoueurJouant = idJoueurJouant;
 	}
 
 }
